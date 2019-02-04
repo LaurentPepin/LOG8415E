@@ -10,6 +10,8 @@ fi
 
 for power in {1..9}; do
   maxPrime=$((10**$power))
-  totalTime=$(sysbench --test=cpu --cpu-max-prime=$maxPrime run | grep "total time:" | grep -oP "\d+\.\d+")
-  echo $INSTANCE,$maxPrime,$totalTime >> $RESULTS_FILE_NAME
+  for iteration in {1..5}; do
+    totalTime=$(sysbench --test=cpu --cpu-max-prime=$maxPrime run | grep "total time:" | grep -oP "\d+\.\d+")
+    echo $INSTANCE,$maxPrime,$totalTime >> $RESULTS_FILE_NAME
+  done
 done
