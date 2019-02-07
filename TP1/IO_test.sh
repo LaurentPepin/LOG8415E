@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Throughput test
+# This benchmark tracks the time it took for the entire transfer
+# of data from point A to point B
+
 INSTANCE=$1
-WRITE_TEST_FILE_NAME="IO_write_test_results.csv"
-READ_TEST_FILE_NAME="IO_read_test_results.csv"
+WRITE_TEST_FILE_NAME="IO_test_results.csv"
 
 
 
@@ -11,24 +14,19 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-#Throughput test
-# analyze the rate at which the storage system delivers data
+
 # oflag=dsync This option get rid of caching
 
-#write
-for power in {1..9}; do
-  blockSize=$((8**$power))
+# for power in {1..34}; do
+for power in {1..5}; do
+  blockSize=$((2**$power))
+  totalTime=0
+  # TODO : les unites changent...
   for iteration in {1..5}; do
-  totalTime=$(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync | grep "MB/S" | grep -oP ",\d+\.\d+MB/S" | grep -oP "\d+\.\d+" )
-    echo $INSTANCE,$blockSize,$totalTime >> $WRITE_TEST_FILE_NAME
+    totalTime= $(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f4)
+    $(rm /tmp/test)
   done
+  # totalTime= totalTime / 34.0
+  echo $INSTANCE,$blockSize,$totalTime >> $WRITE_TEST_FILE_NAME
 done
 
-#read
-for power in {1..9}; do
-  blockSize=$((8**$power))
-  for iteration in {1..5}; do
-  totalTime=$(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync | grep "MB/S" | grep -oP ",\d+\.\d+MB/S" | grep -oP "\d+\.\d+" )
-    echo $INSTANCE,$blockSize,$totalTime >> $READ_TEST_FILE_NAME
-  done
-done
