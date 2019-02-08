@@ -6,7 +6,7 @@
 
 INSTANCE=$1
 WRITE_TEST_FILE_NAME="IO_test_results.csv"
-
+echo "instance","blocksize","time" >> $WRITE_TEST_FILE_NAME
 
 
 if [[ "$INSTANCE" == "" ]]; then
@@ -17,16 +17,15 @@ fi
 
 # oflag=dsync This option get rid of caching
 
-# for power in {1..34}; do
-for power in {1..5}; do
+for power in {1..34}; do
   blockSize=$((2**$power))
   totalTime=0
-  # TODO : les unites changent...
   for iteration in {1..5}; do
-    totalTime= $(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f4)
+    totalTime=$(python -c "print $(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f3 | grep -oP "\d+\.\d+") + $totalTime")
     $(rm /tmp/test)
   done
-  # totalTime= totalTime / 34.0
+  totalTime=$(python -c "print $totalTime / 5.0")
+  echo $totalTime
   echo $INSTANCE,$blockSize,$totalTime >> $WRITE_TEST_FILE_NAME
 done
 
