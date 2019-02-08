@@ -8,6 +8,10 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
+if [ ! -f $RESULTS_FILE_NAME ]; then
+  echo "instance,max_prime,time" > $RESULTS_FILE_NAME
+fi
+
 for power in {1..9}; do
   maxPrime=$((10**$power))
   for iteration in {1..5}; do
