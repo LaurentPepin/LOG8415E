@@ -9,9 +9,11 @@ if [[ "$INSTANCE" == "" ]]; then
 fi
 
 if [ ! -f $RESULTS_FILE_NAME ]; then
-  speedtest-cli --csv-header > $RESULTS_FILE_NAME
+	speedtestHeaders=$(speedtest-cli --csv-header)
+	echo Instance,$speedtestHeaders > $RESULTS_FILE_NAME
 fi
 
-for iteration in {1..5}; done
-  speedtest-cli --csv >> $RESULTS_FILE_NAME
+for iteration in {1..1}; do
+	results=$(speedtest-cli --csv)
+	echo $INSTANCE,$results >> $RESULTS_FILE_NAME
 done
