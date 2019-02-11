@@ -6,7 +6,7 @@
 
 INSTANCE=$1
 WRITE_TEST_FILE_NAME="IO_test_results.csv"
-echo "instance","blocksize","time" >> $WRITE_TEST_FILE_NAME
+echo "instance","blocksize","writeTime,readTime" >> $WRITE_TEST_FILE_NAME
 
 
 if [[ "$INSTANCE" == "" ]]; then
@@ -16,16 +16,18 @@ fi
 
 
 # oflag=dsync This option get rid of caching
-
 for power in {1..34}; do
   blockSize=$((2**$power))
-  totalTime=0
+  readTime=0
+  writeTime=0
   for iteration in {1..5}; do
-    totalTime=$(python -c "print $(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f3 | grep -oP "\d+\.\d+") + $totalTime")
-    $(rm /tmp/test)
+    writeTime=$(python -c "print $(dd if=/dev/zero of=/tmp/test bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f3 | grep -oP "\d+\.\d+") + $writeTime")
+    echo $writeTime
+    # readTime=$(python -c "print $(dd if=/tmp/test of=/dev/zero bs=$blockSize count=1 oflag=dsync 2>&1 | sed 1,2d | cut -d',' -f3 | grep -oP "\d+\.\d+") + $readTime")
+    # $(rm /tmp/test)
   done
-  totalTime=$(python -c "print $totalTime / 5.0")
-  echo $totalTime
-  echo $INSTANCE,$blockSize,$totalTime >> $WRITE_TEST_FILE_NAME
+  writeTime=$(python -c "print $writeTime / 5.0")
+  readTime=$(python -c "print $readTime / 5.0")
+  echo $INSTANCE,$blockSize,$writeTime,$readTime >> $WRITE_TEST_FILE_NAME
 done
 
