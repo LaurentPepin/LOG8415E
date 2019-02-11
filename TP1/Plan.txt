@@ -1,0 +1,15 @@
+1- Linear regression
+
+  CPU -> script incremente maxPrime avec temps fixe de 10 min. On cherche le max number qui donne 1 event par
+    5 min sur la meilleure machine -> cest le max. On prend la moitie
+
+  Bonnie++, voir avec 1000*1024
+
+  Network -> pas de parametres
+
+  Disk -> all done by test
+
+  dd-> fix block size (nombre magique), fait varier count (nb de blocks) jusqu'à temps qu'on ne soit pas
+      capable de finir en dedans de x temps, comme 10 minutes
+
+  hdparm -> all done by test
