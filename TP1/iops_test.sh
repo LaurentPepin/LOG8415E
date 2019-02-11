@@ -26,7 +26,6 @@ for n1024Files in {1..5}; do
 
   for iteration in {1..5}; do
 	  rawResults=$(bonnie++ -d $directory -s 0 -n $n1024Files:10000:1000 -m $INSTANCE -x 1)
-	  echo $rawResults
     for index in {1..18}; do
       if [[ "$index" -gt 12 ]]; then
 	      substring=$((30+$index))
