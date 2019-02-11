@@ -1,9 +1,11 @@
 #!/bin/bash
 
 INSTANCE=$1
+DISK_PARTITION=$2
 
-if [[ "$INSTANCE" == "" ]]; then
+if [[ "$INSTANCE" == "" || "$DISK_PARTITION" == "" ]]; then
   echo "First parameter is INSTANCE"
+  echo "Second parameter is DISK_PARTITION"
   exit 1
 fi
 
@@ -12,7 +14,6 @@ yes | ./installation.sh
 ./cpu_test.sh $INSTANCE
 
 ./IO_latency_test.sh $INSTANCE
-
 
 ./IO_read_test.sh $INSTANCE $DISK_PARTITION
 
