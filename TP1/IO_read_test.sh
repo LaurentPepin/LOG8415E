@@ -3,7 +3,7 @@
 
 INSTANCE=$1
 DISK_PARTITION=$2
-TEST_FILE_NAME="IO_test_results.csv"
+TEST_FILE_NAME="IO_read_test_results.csv"
 echo "instance","DiskPartition","cachedReadingSpeed","regularReadingSpeed" > $TEST_FILE_NAME
 
 
@@ -20,15 +20,12 @@ fi
 cachedSpeed=0
 regularSpeed=0
 for iteration in {1..5}; do
-    #name of disk partition
-    result=$(sudo hdparm -Tt /dev/$DISK_PARTITION)
-    echo $result
-    echo $(echo $result  | grep "cached" | grep -oP "=.*" | grep -oP " \d+\.\d+")
-    cachedSpeed=$(python -c "print(echo $result  | grep "cached" | grep -oP "=.*" | grep -oP " \d+\.\d+") + $cachedSpeed")
-    echo $cachedSpeed
-    regularSpeed=$(python -c "print(echo $result  | grep "cached" | grep -oP "=.*" | grep -oP " \d+\.\d+") + $regularSpeed")
+  #name of disk partition
+  results=$(sudo hdparm -Tt /dev/$DISK_PARTITION  | grep -oP "=.*MB/sec$" | grep -oP "\d+\.*\d+")
+  cachedSpeed=$(python -c "print ($(echo $results | cut -d ' ' -f 1) + $cachedSpeed)")
+  regularSpeed=$(python -c "print ($(echo $results | cut -d ' ' -f 2) + $regularSpeed)")
 done
-  cachedSpeed=$(python -c "print $cachedSpeed / 5.0")
-  regularSpeed=$(python -c "print $regularSpeed / 5.0")
-  echo $INSTANCE,$DISK_PARTITION,$cachedSpeed,$regularSpeed >> $TEST_FILE_NAME
-done
+
+cachedSpeed=$(python -c "print $cachedSpeed / 5.0")
+regularSpeed=$(python -c "print $regularSpeed / 5.0")
+echo $INSTANCE,$DISK_PARTITION,$cachedSpeed,$regularSpeed >> $TEST_FILE_NAME
