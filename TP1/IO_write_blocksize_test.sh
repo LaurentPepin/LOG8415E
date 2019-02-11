@@ -17,6 +17,8 @@ fi
 # oflag=dsync This option get rid of caching
 #minimum of 1024 bytes
 # max block size will be 2^31 -> 2GB
+bestBlockSize=0
+maxSpeed=0
 for power in {10..31}; do
   blockSize=$((2**$power))
   meanTime=0
@@ -32,7 +34,13 @@ for power in {10..31}; do
   meanTime=$(python -c "print $meanTime + $writeTime")
   done
   meanTime=$(python -c "print $meanTime / 5.0")
+  if [[ "$meanTime" -gt "$maxSpeed" ]]; then
+    maxSpeed=$meanTime
+    bestBlockSize=$blockSize
+  fi
   rm /tmp/test
   echo $INSTANCE,$blockSize,$meanTime >> $WRITE_TEST_FILE_NAME
 done
+
+echo $bestBlockSize
 
