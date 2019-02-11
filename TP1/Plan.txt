@@ -1,7 +1,7 @@
 1- Linear regression
 
   CPU -> script incremente maxPrime avec temps fixe de 10 min. On cherche le max number qui donne 1 event par
-    5 min sur la meilleure machine -> cest le max. On prend la moitie
+    5 min sur la meilleure machine -> cest le max. On prend la moitie. MIN threads
 
   Bonnie++, voir avec 1000*1024
 
