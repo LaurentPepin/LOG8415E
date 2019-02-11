@@ -3,7 +3,7 @@
 
 INSTANCE=$1
 WRITE_TEST_FILE_NAME="IO_test_results.csv"
-echo "instance","blocksize","writeTime,readTime" >> $WRITE_TEST_FILE_NAME
+echo "instance","blocksize","writeTime,readTime" > $WRITE_TEST_FILE_NAME
 
 
 if [[ "$INSTANCE" == "" ]]; then

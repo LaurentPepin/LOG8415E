@@ -4,7 +4,7 @@
 INSTANCE=$1
 DISK_PARTITION=$2
 TEST_FILE_NAME="IO_test_results.csv"
-echo "instance","DiskPartition","cachedReadingSpeed","regularReadingSpeed" >> $TEST_FILE_NAME
+echo "instance","DiskPartition","cachedReadingSpeed","regularReadingSpeed" > $TEST_FILE_NAME
 
 
 if [[ "$INSTANCE" == "" ]]; then
@@ -12,7 +12,7 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-if [[ "$INSTANCE" == "" ]]; then
+if [[ "$DISK_PARTITION" == "" ]]; then
   echo "First parameter is DISK_PARTITION"
   exit 1
 fi
