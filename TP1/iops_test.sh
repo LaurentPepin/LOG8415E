@@ -45,7 +45,7 @@ for n1024Files in {1..5}; do
 	  results[$i-1]=$(python -c "print ${results[$i-1]} / 5.0")
   done
   stringResults=${results[@]}
-  echo ${stringResults// /,} >> $RESULTS_FILE_NAME
+  echo $INSTANCE,$n1024Files,${stringResults// /,} >> $RESULTS_FILE_NAME
 done
 
 rm -rf iopsTestFiles
