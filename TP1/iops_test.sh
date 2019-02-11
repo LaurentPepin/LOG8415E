@@ -20,28 +20,32 @@ fi
 mkdir -p iopsTestFiles
 directory="./iopsTestFiles"
 
-for n1024Files in {1..1}; do
+for n1024Files in {1..5}; do
 
   results=(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0)
 
-  for iteration in {1..1}; do
+  for iteration in {1..5}; do
 	  rawResults=$(bonnie++ -d $directory -s 0 -n $n1024Files:10000:1000 -m $INSTANCE -x 1)
-    echo rawResults
+	  echo $rawResults
     for index in {1..18}; do
-      if [[ $index -qt 12 ]]; do
-        substring=$(30+$index)
+      if [[ "$index" -gt 12 ]]; then
+	      substring=$((30+$index))
       else
-        substring=$(24+$index)
+	      substring=$((24+$index))
       fi
       subResult=$(echo $rawResults | cut -d ',' -f $substring)
       if [[ "$subResult" == *"+"* ]]; then
         subResult=0
       fi
-      subResult=$(echo subResult | cut -d 'u' -f 1)
-      rawResults[$index]=$(python -c "print $subResult + ${results[$index]}")
+      subResult=$(echo $subResult | cut -d 'u' -f 1)
+      results[$index-1]=$(python -c "print float($subResult) + ${results[$index-1]}")
     done
   done
-  echo ${results[@]}
+  for i in {1..18}; do
+	  results[$i-1]=$(python -c "print ${results[$i-1]} / 5.0")
+  done
+  stringResults=${results[@]}
+  echo ${stringResults// /,} >> $RESULTS_FILE_NAME
 done
 
 rm -rf iopsTestFiles
