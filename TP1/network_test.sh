@@ -2,7 +2,7 @@
 
 INSTANCE=$1
 SERVERID=$2
-RESULTS_FILE_NAME="network_test_results.csv"
+RESULTS_FILE_NAME="./results/network_test_results.csv"
 
 if [[ "$INSTANCE" == "" || "$SERVERID" == "" ]]; then
   echo "First parameter is INSTANCE"

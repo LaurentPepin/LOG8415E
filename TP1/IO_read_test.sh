@@ -3,7 +3,7 @@
 
 INSTANCE=$1
 DISK_PARTITION=$2
-TEST_FILE_NAME="IO_read_test_results.csv"
+TEST_FILE_NAME="./results/IO_read_test_results.csv"
 echo "instance","DiskPartition","cachedReadingSpeed","regularReadingSpeed" > $TEST_FILE_NAME
 
 

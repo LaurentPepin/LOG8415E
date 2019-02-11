@@ -2,8 +2,8 @@
 
 INSTANCE=$1
 BLOCK_SIZE=$2
-RESULTS_WRITE_FILE_NAME="memory_total_write_test_results.csv"
-RESULTS_READ_FILE_NAME="memory_total_read_test_results.csv"
+RESULTS_WRITE_FILE_NAME="./results/memory_total_write_test_results.csv"
+RESULTS_READ_FILE_NAME="./results/memory_total_read_test_results.csv"
 
 if [[ "$INSTANCE" == "" || "$BLOCK_SIZE" == "" ]]; then
   echo "First parameter is INSTANCE"

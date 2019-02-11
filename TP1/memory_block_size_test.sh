@@ -1,8 +1,8 @@
 #!/bin/bash
 
 INSTANCE=$1
-RESULTS_WRITE_FILE_NAME="memory_write_test_results.csv"
-RESULTS_READ_FILE_NAME="memory_read_test_results.csv"
+RESULTS_WRITE_FILE_NAME="./results/memory_write_test_results.csv"
+RESULTS_READ_FILE_NAME="./results/memory_read_test_results.csv"
 
 if [[ "$INSTANCE" == "" ]]; then
   echo "First parameter is INSTANCE"
