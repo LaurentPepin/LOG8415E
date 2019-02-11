@@ -20,11 +20,11 @@ fi
 mkdir -p iopsTestFiles
 directory="./iopsTestFiles"
 
-for n1024Files in {1..1}; do
+for n1024Files in {1..5}; do
 
   results=(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0)
 
-  for iteration in {1..2}; do
+  for iteration in {1..5}; do
 	  rawResults=$(bonnie++ -d $directory -s 0 -n $n1024Files:10000:1000 -m $INSTANCE -x 1)
 	  echo $rawResults
     for index in {1..18}; do
@@ -42,10 +42,10 @@ for n1024Files in {1..1}; do
     done
   done
   for i in {1..18}; do
-	  results[$i-1]=$(python -c "print ${results[$i-1]} / 2.0")
+	  results[$i-1]=$(python -c "print ${results[$i-1]} / 5.0")
   done
   stringResults=${results[@]}
-  echo ${stringResults// /,}
+  echo ${stringResults// /,} >> $RESULTS_FILE_NAME
 done
 
 rm -rf iopsTestFiles
