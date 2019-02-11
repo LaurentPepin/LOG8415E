@@ -7,9 +7,14 @@
 
   Network -> pas de parametres
 
-  Disk -> all done by test
-
-  dd-> fix block size (nombre magique), fait varier count (nb de blocks) jusqu'à temps qu'on ne soit pas
+  dd et ram-> fix block size (nombre magique), fait varier count (nb de blocks) jusqu'à temps qu'on ne soit pas
       capable de finir en dedans de x temps, comme 10 minutes
 
   hdparm -> all done by test
+
+2- Nos parametres sont maintenant trouves
+    Faut scripté le motherOfAll, execution sequentielle, 5 fois, de tous les tests.
+    Enregistrer les resultats a chaque execution.
+
+    BINGO
+    POUf pouf din pantoufles - Tristan
