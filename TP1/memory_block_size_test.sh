@@ -10,16 +10,16 @@ if [[ "$INSTANCE" == "" ]]; then
 fi
 
 if [ ! -f $RESULTS_WRITE_FILE_NAME ]; then
-  echo "instance,blockSize,time" > $RESULTS_WRITE_FILE_NAME
+  echo "instance,blockSize,speed" > $RESULTS_WRITE_FILE_NAME
 fi
 if [ ! -f $RESULTS_READ_FILE_NAME ]; then
-  echo "instance,blockSize,time" > $RESULTS_READ_FILE_NAME
+  echo "instance,blockSize,speed" > $RESULTS_READ_FILE_NAME
 fi
 
 # test read
 for power in {1..31}; do
   blockSize=$((2**$power))
-  avgSpeed=0
+  speed=0
   for iteration in {1..5}; do
     result=$(python3 -c "print($(sysbench memory --memory-block-size=$blockSize\K \
     --memory-total-size=$blockSize\K \
@@ -32,8 +32,9 @@ for power in {1..31}; do
       echo $INSTANCE,$blockSize,0 >> $RESULTS_READ_FILE_NAME
       break
     else
-      avgSpeed=$(python3 -c "print($avgSpeed+$result)")
+      speed=$(python3 -c "print($avgSpeed+$result)")
       if [[ "$iteration" == 5 ]]; then
+        avgSpeed=$(python3 -c "print($speed /5)")
         echo $INSTANCE,$blockSize,$avgSpeed >> $RESULTS_READ_FILE_NAME
       fi
     fi
@@ -43,7 +44,7 @@ done
 # write test
 for power in {1..31}; do
   blockSize=$((2**$power))
-  avgSpeed=0
+  speed=0
   for iteration in {1..5}; do
     result=$(python3 -c "print($(sysbench memory --memory-block-size=$blockSize\K \
     --memory-total-size=$blockSize\K \
@@ -56,8 +57,9 @@ for power in {1..31}; do
       echo $INSTANCE,$blockSize,0 >> $RESULTS_WRITE_FILE_NAME
       break
     else
-      avgSpeed=$(python3 -c "print($avgSpeed+$result)")
+      speed=$(python3 -c "print($avgSpeed+$result)")
       if [[ "$iteration" == 5 ]]; then
+        avgSpeed=$(python3 -c "print($speed /5)")
         echo $INSTANCE,$blockSize,$avgSpeed >> $RESULTS_WRITE_FILE_NAME
       fi
     fi
