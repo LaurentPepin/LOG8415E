@@ -11,17 +11,18 @@ if [[ "$INSTANCE" == "" || "$SERVERID" == "" ]]; then
 fi
 
 if [ ! -f $RESULTS_FILE_NAME ]; then
-	speedtestHeaders=$(speedtest-cli --csv-header)
-	echo Instance,$speedtestHeaders > $RESULTS_FILE_NAME
+	echo Instance,Ping,Download,Upload > $RESULTS_FILE_NAME
 fi
 
 # Results are in bit/s according to https://www.mankier.com/1/speedtest-cli#--bytes
+ping=0
+download=0
+upload=0
 for iteration in {1..5}; do
 	results=$(speedtest-cli --csv --server $SERVERID)
-	echo results
-	ping=$(python -c "print $(echo results | cut -d ',' -f 8) + $ping")
-	download=$(python -c "print $(echo results | cut -d ',' -f 9) + $download")
-	upload=$(python -c "print $(echo results | cut -d ',' -f 10) + $upload")
+	ping=$(python -c "print $(echo $results | cut -d ',' -f 7) + $ping")
+	download=$(python -c "print $(echo $results | cut -d ',' -f 8) + $download")
+	upload=$(python -c "print $(echo $results | cut -d ',' -f 9) + $upload")
 done
-echo $INSTANCE,$results
-#echo $INSTANCE,$results >> $RESULTS_FILE_NAME
+
+echo $INSTANCE,$ping,$download,$upload >> $RESULTS_FILE_NAME
