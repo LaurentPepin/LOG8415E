@@ -5,7 +5,7 @@
 # of data from point A to point B
 
 INSTANCE=$1
-WRITE_TEST_FILE_NAME="IO_test_results.csv"
+WRITE_TEST_FILE_NAME="./results/IO_test_results.csv"
 echo "instance","blocksize","writeTime,readTime" >> $WRITE_TEST_FILE_NAME
 
 

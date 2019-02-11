@@ -4,7 +4,7 @@
 # This benchmark tracks the time it take between request and response
 
 INSTANCE=$1
-TEST_FILE_NAME="IO_latency_test_result.csv"
+TEST_FILE_NAME="./results/IO_latency_test_result.csv"
 echo "instance","latencyAvg" > $TEST_FILE_NAME
 
 if [[ "$INSTANCE" == "" ]]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTANCE=$1
-RESULTS_FILE_NAME="cpu_test_results.csv"
+RESULTS_FILE_NAME="./results/cpu_test_results.csv"
 
 if [[ "$INSTANCE" == "" ]]; then
   echo "First parameter is INSTANCE"
