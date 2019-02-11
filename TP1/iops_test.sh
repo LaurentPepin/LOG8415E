@@ -33,7 +33,12 @@ for n1024Files in {1..1}; do
       else
         substring=$(24+$index)
       fi
-      rawResults[$index]=$(python -c "print $(echo $rawResults | cut -d ',' -f $substring) + ${results[$index]}")
+      subResult=$(echo $rawResults | cut -d ',' -f $substring)
+      if [[ "$subResult" == *"+"* ]]; then
+        subResult=0
+      fi
+      subResult=$(echo subResult | cut -d 'u' -f 1)
+      rawResults[$index]=$(python -c "print $subResult + ${results[$index]}")
     done
   done
   echo ${results[@]}
