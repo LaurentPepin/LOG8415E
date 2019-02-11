@@ -15,7 +15,8 @@ fi
 for power in {1..9}; do
   maxPrime=$((10**$power))
   for iteration in {1..5}; do
-    totalTime=$(sysbench --test=cpu --cpu-max-prime=$maxPrime run | grep "total time:" | grep -oP "\d+\.\d+")
-    echo $INSTANCE,$maxPrime,$totalTime >> $RESULTS_FILE_NAME
+    totalTime=$(python -c "print $(sysbench --test=cpu --cpu-max-prime=$maxPrime run | grep "total time:" | grep -oP "\d+\.\d+") + $totalTime")
   done
+  totalTime=$(python -c "print $totalTime / 5.0")
+  echo $INSTANCE,$maxPrime,$totalTime >> $RESULTS_FILE_NAME
 done
