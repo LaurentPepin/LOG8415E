@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get install python
 sudo apt-get install sysbench
 sudo apt-get install ioping
 sudo apt-get install hdparm

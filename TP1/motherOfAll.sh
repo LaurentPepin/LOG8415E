@@ -11,6 +11,13 @@ fi
 
 yes | ./installation.sh
 
+for iteration in {1..5}; do
+  
+  
+
+
+done
+
 ./cpu_test.sh $INSTANCE
 
 ./IO_latency_test.sh $INSTANCE
