@@ -1,0 +1,2 @@
+Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
+local,750,1740.0,98.0,0.0,0.0,0.0,0.0,1865.0,102.0,0.0,0.0,0.0,0.0,1231.0,732.0,14796.0,2171.0,102.0,6991.0

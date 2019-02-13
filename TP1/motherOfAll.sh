@@ -14,7 +14,7 @@ yes | ./installation.sh
 for iteration in {1..5}; do
   
   
-
+  ./iops_test.sh $INSTANCE
 
 done
 

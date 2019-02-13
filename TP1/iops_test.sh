@@ -21,7 +21,7 @@ mkdir -p iopsTestFiles
 directory="./iopsTestFiles"
 
 results=(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0)
-rawResults=$(bonnie++ -d $directory -s 0 -n 750 -m $INSTANCE -x 1)
+rawResults=$(bonnie++ -d $directory -s 0 -n 750 -m $INSTANCE -x 1 -q)
 for index in {1..18}; do
   if [[ "$index" -gt 12 ]]; then
     substring=$((30+$index))
