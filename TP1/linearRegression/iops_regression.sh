@@ -39,7 +39,7 @@ do
 done
 
 stringResults=${results[@]}
-echo $INSTANCE,$n1024Files,${stringResults// /,}
-echo $INSTANCE,$n1024Files,${stringResults// /,} >> $RESULTS_FILE_NAME
+echo $INSTANCE,$N_1024_FILES,${stringResults// /,}
+echo $INSTANCE,$N_1024_FILES,${stringResults// /,} >> $RESULTS_FILE_NAME
 
 rm -rf iopsTestFiles
