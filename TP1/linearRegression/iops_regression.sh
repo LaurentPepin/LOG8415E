@@ -35,6 +35,7 @@ do
     subResult=0
   fi
   subResult=$(echo $subResult | cut -d 'u' -f 1)
+  subResult=$(echo $subResult | cut -d 'm' -f 1)
   results[$index-1]=$(python -c "print float($subResult)")
 done
 
