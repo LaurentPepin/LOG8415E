@@ -34,9 +34,13 @@ do
   if [[ "$subResult" == *"+"* ]]; then
     subResult=0
   fi
-  subResult=$(echo $subResult | cut -d 'u' -f 1)
-  subResult=$(echo $subResult | cut -d 'm' -f 1)
-  results[$index-1]=$(python -c "print float($subResult)")
+  if [[ "$subResult" == *"m"* ]]; then
+    subResult=$(echo $subResult | cut -d 'm' -f 1)
+    results[$index-1]=$(python -c "print float($subResult) * 1000")
+  else
+    subResult=$(echo $subResult | cut -d 'u' -f 1)
+    results[$index-1]=$(python -c "print float($subResult)")
+  fi  
 done
 
 stringResults=${results[@]}
