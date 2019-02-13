@@ -22,7 +22,7 @@ mkdir -p iopsTestFiles
 directory="./iopsTestFiles"
 
 results=(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0)
-rawResults=$(bonnie++ -d $directory -s 0 -n $N_1024_FILES:10000:1000 -m $INSTANCE -x 1)
+rawResults=$(bonnie++ -d $directory -s 0 -n $N_1024_FILES -m $INSTANCE -x 1)
 for index in {1..18}
 do
   if [[ "$index" -gt 12 ]]; then
