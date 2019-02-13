@@ -15,10 +15,6 @@ if [ ! -f $RESULTS_FILE_NAME ]; then
 fi
 
 # Results are in bit/s according to https://www.mankier.com/1/speedtest-cli#--bytes
-ping=0
-download=0
-upload=0
-
 results=$(speedtest-cli --csv --server $SERVERID)
 ping=$(echo $results | cut -d ',' -f 7)
 download=$(echo $results | cut -d ',' -f 8)
