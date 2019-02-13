@@ -16,6 +16,7 @@ for iteration in {1..5}; do
   
   ./iops_test.sh $INSTANCE
 
+  ./network_test.sh $INSTANCE 911
 done
 
 ./cpu_test.sh $INSTANCE
