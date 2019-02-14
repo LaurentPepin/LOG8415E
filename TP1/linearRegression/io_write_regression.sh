@@ -11,9 +11,9 @@ if [[ "$INSTANCE" == "" ]]; then
   echo "First parameter is INSTANCE"
   exit 1
 fi
-maxTime=6
+maxTime=600
 transferTime=0
-incrementRate=4
+incrementRate=6
 foundMaxCount=false
 count=0
 lastCount=0
