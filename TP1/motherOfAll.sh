@@ -16,6 +16,7 @@ for iteration in {1..5}; do
   # CPU
 
   # IO
+  #./IO_write_test.sh $INSTANCE COUNT
 
   # IOPS
   ./iops_test.sh $INSTANCE
