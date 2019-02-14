@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo apt-get update
 sudo apt-get install python
 sudo apt-get install sysbench
 sudo apt-get install ioping
