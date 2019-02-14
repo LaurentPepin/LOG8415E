@@ -14,13 +14,17 @@ fi
 
 maxTime=600000
 maxNumberOfEvents=1
-incrementRate=8
+incrementRate=2
 foundMaxPrime=false
 maxPrime=1
 lastPrime=0
 
 while [ $foundMaxPrime != 1 ]; do
     numberOfEvents=$(sysbench --max-time=$maxTime cpu --cpu-max-prime=$maxPrime run | grep "total number of events:" | grep -oP "\d+$")
+    echo "Actual prime:"
+    echo $maxPrime
+    echo "Actual number of events:"
+    echo $numberOfEvents
     if (( $numberOfEvents > $maxNumberOfEvents )); then
         lastPrime=$maxPrime
         maxPrime=$(($maxPrime + 10**$incrementRate))
