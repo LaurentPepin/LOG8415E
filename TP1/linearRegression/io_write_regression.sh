@@ -22,6 +22,8 @@ while [ $foundMaxCount != 1 ]; do
     transferTime=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count conv=fdatasync 2>&1 | sed 1,2d | cut -d ',' -f3 | grep -oP "\d+\.\d+" | cut -d '.' -f1)
     rm /tmp/test
     if (( $transferTime > $maxTime )); then
+        echo "Busted Max Time with count:"
+        echo $count
         if [[ $incrementRate -gt 3 ]]; then
             incrementRate=$(($incrementRate-1))
         else 

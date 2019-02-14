@@ -21,13 +21,12 @@ lastPrime=0
 
 while [ $foundMaxPrime != 1 ]; do
     numberOfEvents=$(sysbench --max-time=$maxTime cpu --cpu-max-prime=$maxPrime run | grep "total number of events:" | grep -oP "\d+$")
-    echo $numberOfEvents
     if (( $numberOfEvents > $maxNumberOfEvents )); then
         lastPrime=$maxPrime
         maxPrime=$(($maxPrime + 10**$incrementRate))
-        echo $maxPrime
     else
-        echo "busted max"
+        echo "Busted max with maxPrime:"
+        echo $maxPrime
         if [[ $incrementRate -gt 3 ]]; then
             incrementRate=$(($incrementRate-1))
         else 
