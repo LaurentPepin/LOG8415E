@@ -14,8 +14,8 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-maxTime=600
-incrementRate=6
+maxTime=30
+incrementRate=5
 foundMaxCount=false
 count=0
 lastCount=0
@@ -42,7 +42,6 @@ while [ $foundMaxCount != 1 ]; do
         count=$(($count + 10**$incrementRate))
     fi
 done
-rm /tmp/test
 echo "Regression test over"
 echo "Count is:"
 echo $count
