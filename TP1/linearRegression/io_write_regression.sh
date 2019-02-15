@@ -15,13 +15,14 @@ if [[ "$INSTANCE" == "" ]]; then
 fi
 
 maxTime=600
-incrementRate=5
+incrementRate=6
 foundMaxCount=false
 count=0
 lastCount=0
 
+#oflag=direct prevents caching
 while [ $foundMaxCount != 1 ]; do
-    transferTime=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count conv=fdatasync 2>&1 | sed 1,2d | cut -d ',' -f3 | grep -oP "\d+\.\d+" | cut -d '.' -f1)
+    transferTime=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f3 | grep -oP "\d+\.\d+" | cut -d '.' -f1)
     rm /tmp/test
     echo "Actual transfer time:"
     echo $transferTime
