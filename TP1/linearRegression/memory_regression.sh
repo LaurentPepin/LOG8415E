@@ -23,5 +23,6 @@ echo $result
 	memoryErrorsCount=$(echo $result | grep -o "Cannot allocate memory" * | wc -l)
 	echo "memoryErrors: "$memoryErrorsCount
     echo $INSTANCE,$nStressors,$memoryErrorsCount >> $RESULTS_FILE_NAME
+    ((nStressors++))
 done
 echo "Regression test over"
