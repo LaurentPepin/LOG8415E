@@ -14,7 +14,7 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-maxTime=30
+maxTime=600
 incrementRate=5
 foundMaxCount=false
 count=0
