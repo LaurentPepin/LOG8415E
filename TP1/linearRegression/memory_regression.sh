@@ -20,7 +20,7 @@ nStressors=1
 while [[ "$memoryErrorsCount" -lt 11 ]]; do
 	result="$(stress-ng --brk $nStressors --stack $nStressors --bigheap $nStressors --metrics-brief --timeout 60s 2>&1)"
 echo $result
-	memoryErrorsCount=$(echo $result | grep -o "Cannot allocate memory" * | wc -l)
+	memoryErrorsCount=$(echo "$result" | grep -o "Cannot allocate memory" | wc -l)
 	echo "memoryErrors: "$memoryErrorsCount
     echo $INSTANCE,$nStressors,$memoryErrorsCount >> $RESULTS_FILE_NAME
     ((nStressors++))

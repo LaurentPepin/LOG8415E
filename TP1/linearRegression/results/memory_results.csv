@@ -1,2 +1,7 @@
 instance,nStressors,memoryErrorsCount
-m4.large,1,2
+t2.2xlarge,1,0
+t2.2xlarge,2,0
+t2.2xlarge,3,6
+t2.2xlarge,4,8
+t2.2xlarge,5,10
+t2.2xlarge,6,12
