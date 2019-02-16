@@ -17,8 +17,10 @@ for iteration in {1..5}; do
 
   # IO
   #./IO_write_test.sh $INSTANCE COUNT
-  ./io_read_test.sh $INSTANCE $DISK_PARTITION
+  
+  #IO latency
   ./IO_latency_test.sh $INSTANCE
+  
   # IOPS
   ./iops_test.sh $INSTANCE
 
