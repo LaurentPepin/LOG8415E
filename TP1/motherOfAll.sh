@@ -22,6 +22,7 @@ for iteration in {1..5}; do
   ./iops_test.sh $INSTANCE
 
   # Memory
+  ./memory_test.sh $INSTANCE
 
   # Disk
   ./io_read_test.sh $INSTANCE $DISK_PARTITION
