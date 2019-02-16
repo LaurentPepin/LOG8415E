@@ -45,8 +45,8 @@ done
 echo "Found event limit:"
 echo $maxPrime
 
-incrementRate=5
-computationThreshold=3
+incrementRate=7
+computationThreshold=600
 foundMaxPrime=false
 
 while [ $foundMaxPrime != 1 ]; do
