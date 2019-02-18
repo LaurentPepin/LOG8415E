@@ -1,6 +1,7 @@
 #!/bin/bash
 
 INSTANCE=$1
+DISK_PARTITION=$2
 REGRESSION_GRAPH_FILE_NAME="./results/IO_throughput_sampling.csv"
 
 if [ ! -f $WRITE_TEST_FILE_NAME ]; then
@@ -12,7 +13,12 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-for index in {0..5}; do
+if [[ "$DISK_PARTITION" == "" ]]; then
+  echo "Second parameter is DISK_PARTITION"
+  exit 1
+fi
+
+for index in {0..4}; do
     count=$(echo "10^"$index | bc)
     #oflag=direct prevents caching
     throughput=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f4 | grep -oP "\d+.*")
