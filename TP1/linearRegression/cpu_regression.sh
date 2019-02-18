@@ -2,7 +2,7 @@
 
 INSTANCE=$1
 TEST_FILE_NAME="./results/cpu_results.csv"
-REGRESSION_GRAPH_FILE_NAME="./results/cpu_regression_graph_results.csv"
+REGRESSION_GRAPH_FILE_NAME="./results/cpu_regression_graph_results_$INSTANCE.csv"
 
 if [ ! -f $TEST_FILE_NAME ]; then
 	echo "instance, maxPrime" > $TEST_FILE_NAME
@@ -33,7 +33,7 @@ while [ $foundPrimeToMaxTime != 1 ]; do
     else
         echo "Busted max with maxPrime:"
         echo $maxPrime
-        if [[ $incrementRate -gt 3 ]]; then
+        if [[ $incrementRate -gt 4 ]]; then
             incrementRate=$(($incrementRate-1))
         else 
             foundPrimeToMaxTime=1
@@ -76,7 +76,7 @@ echo "maxPrime is:"
 echo $maxPrime
 echo $INSTANCE,$maxPrime >> $TEST_FILE_NAME
 
-git add ./results/cpu_regression_graph_results.csv
+git add ./results/cpu_regression_graph_results_$INSTANCE.csv
 git add ./results/cpu_results.csv
 git commit -m "CPU regression results for $INSTANCE"
 git push 

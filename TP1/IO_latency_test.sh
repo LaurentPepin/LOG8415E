@@ -5,11 +5,14 @@
 
 INSTANCE=$1
 TEST_FILE_NAME="./results/IO_latency_test_result.csv"
-echo "instance","latencyAvg" > $TEST_FILE_NAME
 
 if [[ "$INSTANCE" == "" ]]; then
   echo "First parameter is INSTANCE"
   exit 1
+fi
+
+if [ ! -f $TEST_FILE_NAME ]; then
+	echo "instance","latencyAvg" > $TEST_FILE_NAME
 fi
 
 LATENCY=$(ioping -c 10 ./ | grep -P "avg" | cut -d'/' -f6)
