@@ -21,7 +21,7 @@ fi
 for index in {0..4}; do
     count=$(echo "10^"$index | bc)
     #oflag=direct prevents caching
-    throughput=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f4 | grep -oP "\d+.*")
+    throughput=$(sudo dd if=/dev/zero of=/dev/$DISK_PARTITION bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f4 | grep -oP "\d+.*")
     echo $throughput
     echo $count,$throughput >> $REGRESSION_GRAPH_FILE_NAME
 done
