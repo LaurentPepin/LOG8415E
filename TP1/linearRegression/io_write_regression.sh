@@ -12,7 +12,7 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-for index in {0..4}; do
+for index in {0..5}; do
     count=$(echo "10^"$index | bc)
     #oflag=direct prevents caching
     throughput=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f4 | grep -oP "\d+.*")
