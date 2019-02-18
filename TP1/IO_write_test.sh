@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTANCE=$1
-COUNT=$2
+DISK_PARTITION=$2
 WRITE_TEST_FILE_NAME="./results/IO_write_results.csv"
 
 if [ ! -f $WRITE_TEST_FILE_NAME ]; then
@@ -13,11 +13,10 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-if [[ "$COUNT" == "" ]]; then
-  echo "Second parameter is COUNT"
+if [[ "$DISK_PARTITION" == "" ]]; then
+  echo "Second parameter is DISK_PARTITION"
   exit 1
 fi
 
-result=$(dd if=/dev/zero of=/tmp/test bs=64K count=$COUNT oflag=dsync 2>&1 | sed 1,2d | cut -d ',' -f3 | grep -oP "\d+\.\d+")
-rm /tmp/test
+result=$(sudo dd if=/dev/null of=/dev/$DISK_PARTITION bs=64K  oflag=direct 2>&1 | sed 1,3d | cut -d ',' -f3 | grep -oP "\d+.\d+")
 echo $INSTANCE,$result >> $WRITE_TEST_FILE_NAME
