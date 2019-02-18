@@ -1,12 +1,10 @@
 #!/bin/bash
 
 INSTANCE=$1
-WRITE_TEST_FILE_NAME="./results/IO_results.csv"
-REGRESSION_GRAPH_FILE_NAME="./results/IO_regression_graph_results.csv"
+REGRESSION_GRAPH_FILE_NAME="./results/IO_throughput_sampling.csv"
 
 if [ ! -f $WRITE_TEST_FILE_NAME ]; then
-	echo "instance, maxCount" > $WRITE_TEST_FILE_NAME
-    echo "count, transferTime" > $REGRESSION_GRAPH_FILE_NAME
+    echo "count, throughput" > $REGRESSION_GRAPH_FILE_NAME
 fi
 
 if [[ "$INSTANCE" == "" ]]; then
@@ -14,41 +12,18 @@ if [[ "$INSTANCE" == "" ]]; then
   exit 1
 fi
 
-maxTime=600
-incrementRate=6
-foundMaxCount=false
-count=0
-lastCount=0
-
-#oflag=direct prevents caching
-while [ $foundMaxCount != 1 ]; do
-    transferTime=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f3 | grep -oP "\d+\.\d+" | cut -d '.' -f1)
-    rm /tmp/test
-    echo "Actual transfer time:"
-    echo $transferTime
-    echo "Actual count:"
-    echo $count
-    echo $count, $transferTime >> $REGRESSION_GRAPH_FILE_NAME
-    if (( $transferTime > $maxTime )); then
-        echo "Busted Max Time with count:"
-        echo $count
-        if [[ $incrementRate -gt 3 ]]; then
-            incrementRate=$(($incrementRate-1))
-        else 
-            foundMaxCount=1
-        fi
-        count=$lastCount
-    else
-        lastCount=$count
-        count=$(($count + 10**$incrementRate))
-    fi
+for index in {0..4}; do
+    count=$(echo "10^"$index | bc)
+    #oflag=direct prevents caching
+    throughput=$(dd if=/dev/zero of=/tmp/test bs=64K count=$count oflag=direct 2>&1 | sed 1,2d | cut -d ',' -f4 | grep -oP "\d+.*")
+    echo $throughput
+    echo $count,$throughput >> $REGRESSION_GRAPH_FILE_NAME
 done
-echo "Regression test over"
-echo "Count is:"
-echo $count
-echo $INSTANCE,$count >> $WRITE_TEST_FILE_NAME
 
-git add ./results/IO_regression_graph_results.csv
-git add ./results/IO_results.csv
-git commit -m "IO regression results for $INSTANCE"
+rm /tmp/test
+
+echo "Samping test over"
+
+git add ./results/IO_throughput_sampling.csv
+git commit -m "IO sampling results for $INSTANCE"
 git push 
