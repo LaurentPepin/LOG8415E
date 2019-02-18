@@ -18,5 +18,5 @@ if [[ "$DISK_PARTITION" == "" ]]; then
   exit 1
 fi
 
-result=$(sudo dd if=/dev/null of=/dev/$DISK_PARTITION bs=64K  oflag=direct 2>&1 | sed 1,3d | cut -d ',' -f3 | grep -oP "\d+.\d+")
+result=$(sudo dd if=/dev/zero of=/dev/$DISK_PARTITION bs=64K  oflag=direct 2>&1 | sed 1,3d | cut -d ',' -f3 | grep -oP "\d+.\d+")
 echo $INSTANCE,$result >> $WRITE_TEST_FILE_NAME
