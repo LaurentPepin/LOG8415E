@@ -1,0 +1,6 @@
+Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
+c5-2xlarge,750,41097.0,37.0,687409.0,99.0,3592.0,3.0,41283.0,36.0,845622.0,99.0,2314.0,2.0,356000.0,435.0,1370000.0,374000.0,16.0,1290000.0
+c5-2xlarge,750,40997.0,37.0,689350.0,99.0,3592.0,3.0,37149.0,33.0,833830.0,99.0,2322.0,2.0,342000.0,357.0,1419000.0,541000.0,50.0,1238000.0
+c5-2xlarge,750,41978.0,37.0,686175.0,99.0,3591.0,3.0,42904.0,37.0,824081.0,99.0,2337.0,2.0,358000.0,338.0,1393000.0,331000.0,129.0,1263000.0
+c5-2xlarge,750,38620.0,34.0,692816.0,99.0,1172.0,1.0,1823.0,1.0,826258.0,99.0,75.0,0.0,515000.0,339.0,53006000.0,12489000.0,21.0,59202000.0
+c5-2xlarge,750,42032.0,38.0,683983.0,99.0,130.0,0.0,2256.0,2.0,822538.0,99.0,77.0,0.0,364000.0,338.0,58858000.0,11217000.0,24.0,55629000.0
