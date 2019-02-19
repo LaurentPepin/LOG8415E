@@ -1,6 +1,6 @@
-Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
-a1-large,750,25868.0,72.0,209672.0,99.0,3598.0,9.0,25716.0,70.0,379572.0,99.0,2314.0,6.0,248000.0,1911.0,1354000.0,342000.0,43.0,1183000.0
-a1-large,750,25610.0,73.0,210156.0,99.0,3584.0,9.0,25259.0,70.0,379909.0,99.0,2321.0,6.0,344000.0,1886.0,1332000.0,379000.0,62.0,1281000.0
-a1-large,750,25744.0,73.0,208821.0,99.0,3586.0,9.0,26042.0,72.0,380352.0,99.0,2314.0,6.0,247000.0,1897.0,1341000.0,274000.0,47.0,1266000.0
-a1-large,750,25805.0,72.0,208704.0,99.0,506.0,1.0,1822.0,5.0,380796.0,99.0,74.0,0.0,255000.0,1897.0,54366000.0,11807000.0,44.0,51476000.0
-a1-large,750,25430.0,72.0,208031.0,99.0,125.0,0.0,1946.0,5.0,380359.0,99.0,76.0,0.0,363000.0,1893.0,57207000.0,12412000.0,44.0,58916000.0
+iteration,Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
+1,a1-large,750,25868.0,72.0,209672.0,99.0,3598.0,9.0,25716.0,70.0,379572.0,99.0,2314.0,6.0,248000.0,1911.0,1354000.0,342000.0,43.0,1183000.0
+2,a1-large,750,25610.0,73.0,210156.0,99.0,3584.0,9.0,25259.0,70.0,379909.0,99.0,2321.0,6.0,344000.0,1886.0,1332000.0,379000.0,62.0,1281000.0
+3,a1-large,750,25744.0,73.0,208821.0,99.0,3586.0,9.0,26042.0,72.0,380352.0,99.0,2314.0,6.0,247000.0,1897.0,1341000.0,274000.0,47.0,1266000.0
+4,a1-large,750,25805.0,72.0,208704.0,99.0,506.0,1.0,1822.0,5.0,380796.0,99.0,74.0,0.0,255000.0,1897.0,54366000.0,11807000.0,44.0,51476000.0
+5,a1-large,750,25430.0,72.0,208031.0,99.0,125.0,0.0,1946.0,5.0,380359.0,99.0,76.0,0.0,363000.0,1893.0,57207000.0,12412000.0,44.0,58916000.0

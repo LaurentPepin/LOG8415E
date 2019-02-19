@@ -1,6 +1,6 @@
-Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
-r5-large,750,40015.0,39.0,650783.0,99.0,3593.0,3.0,38565.0,37.0,791154.0,99.0,2341.0,2.0,354000.0,385.0,1422000.0,525000.0,161.0,1347000.0
-r5-large,750,39766.0,38.0,656857.0,99.0,3585.0,3.0,37933.0,36.0,807214.0,100.0,2317.0,2.0,358000.0,365.0,1759000.0,478000.0,61.0,1175000.0
-r5-large,750,38282.0,37.0,654820.0,99.0,3594.0,3.0,40546.0,38.0,798524.0,99.0,2312.0,2.0,361000.0,367.0,1387000.0,380000.0,164.0,1229000.0
-r5-large,750,36062.0,35.0,653156.0,100.0,3459.0,3.0,2022.0,1.0,802521.0,99.0,78.0,0.0,419000.0,373.0,1447000.0,12144000.0,23.0,59209000.0
-r5-large,750,39606.0,38.0,652440.0,99.0,138.0,0.0,2069.0,1.0,802517.0,99.0,77.0,0.0,384000.0,381.0,56726000.0,12098000.0,159.0,49438000.0
+iteration,Instance,numFiles,sequentialCreateBySec,sequentialCreateCPU%, sequentialReadBySec,sequentialReadCPU%,sequentialDeleteBySec,sequentialDeleteCPU%, randomCreateBySec,randomCreateCPU%,randomReadBySec,randomReadCPU%,randomDeleteBySec,randomDeleteCPU%, sequentialCreateLatency,sequentialReadLatency,sequentialDeleteLatency,randomCreateLatency,randomReadLatency, randomDeleteLatency
+1,r5-large,750,40015.0,39.0,650783.0,99.0,3593.0,3.0,38565.0,37.0,791154.0,99.0,2341.0,2.0,354000.0,385.0,1422000.0,525000.0,161.0,1347000.0
+2,r5-large,750,39766.0,38.0,656857.0,99.0,3585.0,3.0,37933.0,36.0,807214.0,100.0,2317.0,2.0,358000.0,365.0,1759000.0,478000.0,61.0,1175000.0
+3,r5-large,750,38282.0,37.0,654820.0,99.0,3594.0,3.0,40546.0,38.0,798524.0,99.0,2312.0,2.0,361000.0,367.0,1387000.0,380000.0,164.0,1229000.0
+4,r5-large,750,36062.0,35.0,653156.0,100.0,3459.0,3.0,2022.0,1.0,802521.0,99.0,78.0,0.0,419000.0,373.0,1447000.0,12144000.0,23.0,59209000.0
+5,r5-large,750,39606.0,38.0,652440.0,99.0,138.0,0.0,2069.0,1.0,802517.0,99.0,77.0,0.0,384000.0,381.0,56726000.0,12098000.0,159.0,49438000.0
