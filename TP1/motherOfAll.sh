@@ -40,3 +40,15 @@ for iteration in {1..5}; do
   # Network
   ./network_test.sh $INSTANCE 911
 done
+
+git pull
+git add ./results/cpu_results_$INSTANCE.csv
+git add ./results/IO_latency_test_result_$INSTANCE.csv
+git add ./results/io_read_test_results_$INSTANCE.csv
+git add ./results/IO_write_results_$INSTANCE.csv
+git add ./results/iops_test_results_$INSTANCE.csv
+git add ./results/network_test_results_$INSTANCE.csv
+git add ./results/memory_test_results_$INSTANCE.csv
+git add ./results/network_test_results_$INSTANCE.csv
+git commit -m "benchmarking results for instance : $INSTANCE"
+git push 

@@ -1,6 +1,6 @@
 #!/bin/bash
 INSTANCE=$1
-WRITE_TEST_FILE_NAME="./results/cpu_results.csv"
+WRITE_TEST_FILE_NAME="./results/cpu_results_$INSTANCE.csv"
 
 if [ ! -f $WRITE_TEST_FILE_NAME ]; then
 	echo "instance","time" > $WRITE_TEST_FILE_NAME

@@ -2,7 +2,7 @@
 
 INSTANCE=$1
 DISK_PARTITION=$2
-WRITE_TEST_FILE_NAME="./results/IO_write_results.csv"
+WRITE_TEST_FILE_NAME="./results/IO_write_results_$INSTANCE.csv"
 
 if [ ! -f $WRITE_TEST_FILE_NAME ]; then
 	echo "instance","time" > $WRITE_TEST_FILE_NAME

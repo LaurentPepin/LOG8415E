@@ -2,7 +2,7 @@
 
 INSTANCE=$1
 
-RESULTS_FILE_NAME="./results/iops_test_results.csv"
+RESULTS_FILE_NAME="./results/iops_test_results_$INSTANCE.csv"
 
 if [[ "$INSTANCE" == "" ]]; then
   echo "First parameter is INSTANCE"
