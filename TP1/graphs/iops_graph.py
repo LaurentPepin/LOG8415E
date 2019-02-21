@@ -34,3 +34,16 @@ for measure in measures:
     plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     plt.savefig(outputFolder + measure.lstrip() + '.png')
     plt.close()
+
+# Create 6 bar graph comparing instances average performances for each measure
+# Modify dataframe to means
+df = df.groupby(['Instance']).mean().reset_index()
+print(df)
+for measure in measures:
+    g = sns.barplot(x='Instance', y=measure, data=df)
+    plt.ylabel(measure + " (file/s)")
+    plt.xlabel("Instance")
+    plt.title("Average value of " + measure.lstrip() +
+              " over 5 iterations for each instance")
+    plt.savefig(outputFolder + 'average_' + measure.lstrip() + '.png')
+    plt.close()
