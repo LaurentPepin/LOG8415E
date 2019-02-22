@@ -1,6 +1,6 @@
-instance,time
-h1-2xlarge,793
-h1-2xlarge,793
-h1-2xlarge,793
-h1-2xlarge,795
-h1-2xlarge,795
+iteration,instance,time
+1,h1-2xlarge,793
+2,h1-2xlarge,793
+3,h1-2xlarge,793
+4,h1-2xlarge,795
+5,h1-2xlarge,795
