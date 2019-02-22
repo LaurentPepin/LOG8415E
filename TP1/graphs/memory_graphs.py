@@ -14,5 +14,17 @@ for instance in instances[1:]:
 	df = pd.concat([df, pd.read_csv("./../results/memory_test_results_" + instance + ".csv")])
 df["index"] = pd.Series(df.index, index=df.index)
 
-g = sns.lineplot(data=df, x="index", y="brk", hue="instance")
-plt.savefig("test.png")
+g1 = sns.lineplot(data=df, x="index", y="brk", hue="instance")
+plt.title("BRK test")
+plt.savefig("memory_brk.png")
+plt.close()
+
+g2 = sns.lineplot(data=df, x="index", y="stack", hue="instance")
+plt.title("Stack test")
+plt.savefig("memory_stack.png")
+plt.close()
+
+g3 = sns.lineplot(data=df, x="index", y="bigheap", hue="instance")
+plt.title("Bigheap test")
+plt.savefig("memory_bigheap.png")
+plt.close()
