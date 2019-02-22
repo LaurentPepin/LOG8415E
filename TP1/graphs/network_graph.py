@@ -4,6 +4,8 @@ import sys
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+import statistics
+import csv
 prefix = './../results/network_test_results_'
 postfix = '.csv'
 instances = ['a1-large', 'c5-2xlarge', 'c5-xlarge', 'h1-2xlarge', 'r5-large']
@@ -19,6 +21,16 @@ print(df)
 # Create 1 graph per measure (6 graphs)
 outputFolder = './network/'
 measures = ['Ping', 'Download', 'Upload']
+# Standard deviations
+sdFileName = './standardDeviations.csv'
+metric = 'network'
+with open(sdFileName, 'a') as sdFile:
+    for instance in instances:
+        for measure in measures:
+            newRow = [metric + '_' + instance + '_' + measure,
+                      str(statistics.stdev(df.loc[df['Instance'] == instance][measure]))]
+            csv.writer(sdFile).writerow(newRow)
+sdFile.close()
 for measure in measures:
     g = sns.lineplot(data=df, x="iteration", y=measure,
                      hue="Instance", marker='o')
@@ -39,6 +51,12 @@ for measure in measures:
 # Modify dataframe to means
 df = df.groupby(['Instance']).mean().reset_index()
 print(df)
+with open(sdFileName, 'a') as sdFile:
+    for measure in measures:
+        newRow = [metric + '_average_' + measure,
+                  str(statistics.stdev(df[measure]))]
+        csv.writer(sdFile).writerow(newRow)
+sdFile.close()
 for measure in measures:
     g = sns.barplot(x='Instance', y=measure, data=df)
     if measure != 'Ping':

@@ -4,6 +4,8 @@ import sys
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+import statistics
+import csv
 prefix = './../results/cpu_results_'
 postfix = '.csv'
 instances = ['a1-large', 'c5-2xlarge', 'c5-xlarge', 'h1-2xlarge', 'r5-large']
@@ -19,6 +21,17 @@ print(df)
 # Create 1 graph per measure (3 graphs)
 outputFolder = './cpu/'
 measures = ['time']
+
+# Standard deviations
+sdFileName = './standardDeviations.csv'
+metric = 'cpu'
+with open(sdFileName, 'a') as sdFile:
+    for instance in instances:
+        for measure in measures:
+            newRow = [metric + '_' + instance + '_' + measure,
+                      str(statistics.stdev(df.loc[df['instance'] == instance][measure]))]
+            csv.writer(sdFile).writerow(newRow)
+sdFile.close()
 for measure in measures:
     g = sns.lineplot(data=df, x="iteration", y=measure,
                      hue="instance", marker='o')
@@ -36,6 +49,13 @@ for measure in measures:
 # Modify dataframe to means
 df = df.groupby(['instance']).mean().reset_index()
 print(df)
+
+with open(sdFileName, 'a') as sdFile:
+    for measure in measures:
+        newRow = [metric + '_average_' + measure,
+                  str(statistics.stdev(df[measure]))]
+        csv.writer(sdFile).writerow(newRow)
+sdFile.close()
 for measure in measures:
     g = sns.barplot(x='instance', y=measure, data=df)
     plt.ylabel(measure + ' (s)')
