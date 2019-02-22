@@ -1,6 +1,6 @@
-instance,time
-c5-xlarge,580.845
-c5-xlarge,556.291
-c5-xlarge,556.027
-c5-xlarge,557.078
-c5-xlarge,555.413
+iteration,instance,time
+1,c5-xlarge,580.845
+2,c5-xlarge,556.291
+3,c5-xlarge,556.027
+4,c5-xlarge,557.078
+5,c5-xlarge,555.413

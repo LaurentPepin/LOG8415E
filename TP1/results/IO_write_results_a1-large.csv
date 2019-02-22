@@ -1,6 +1,6 @@
-instance,time
-a1-large,566.058
-a1-large,551.963
-a1-large,564.724
-a1-large,535.55
-a1-large,520.578
+iteration,instance,time
+1,a1-large,566.058
+2,a1-large,551.963
+3,a1-large,564.724
+4,a1-large,535.55
+5,a1-large,520.578
