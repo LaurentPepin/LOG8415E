@@ -29,6 +29,8 @@ with open(sdFileName, 'a') as sdFile:
     for instance in instances:
         for measure in measures:
             newRow = [metric + '_' + instance + '_' + measure,
+                      str(statistics.mean(
+                          df.loc[df['instance'] == instance][measure])),
                       str(statistics.stdev(df.loc[df['instance'] == instance][measure]))]
             csv.writer(sdFile).writerow(newRow)
 sdFile.close()
@@ -53,6 +55,7 @@ print(df)
 with open(sdFileName, 'a') as sdFile:
     for measure in measures:
         newRow = [metric + '_average_' + measure,
+                  str(statistics.mean(df[measure])),
                   str(statistics.stdev(df[measure]))]
         csv.writer(sdFile).writerow(newRow)
 sdFile.close()

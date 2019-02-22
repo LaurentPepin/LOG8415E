@@ -45,6 +45,7 @@ metric = 'io_read'
 with open(sdFileName, 'a') as sdFile:
     for measure in measures:
         newRow = [metric + '_average_' + measure,
+                  str(statistics.mean(df[measure])),
                   str(statistics.stdev(df[measure]))]
         csv.writer(sdFile).writerow(newRow)
 sdFile.close()

@@ -1,92 +1,92 @@
-cpu_a1-large_time,0.4472135954999579
-cpu_c5-2xlarge_time,0.4472135954999579
-cpu_c5-xlarge_time,2.16794833886788
-cpu_h1-2xlarge_time,1.0954451150103321
-cpu_r5-large_time,15.43696861433617
-cpu_average_time,165.2282905558246
-io_latency_a1-large_latencyAvg,21.45942683297948
-io_latency_c5-2xlarge_latencyAvg,17.41163404164008
-io_latency_c5-xlarge_latencyAvg,9.070446516021146
-io_latency_h1-2xlarge_latencyAvg,9.391645223282227
-io_latency_r5-large_latencyAvg,22.403347964087867
-io_latency_average_latencyAvg,22.140507672589617
-io_read_average_cachedReadingSpeed,2811.3480185793437
-io_read_average_regularReadingSpeed,1.522093952422128
-io_write_a1-large_time,19.54612152832375
-io_write_c5-2xlarge_time,7.547717184685738
-io_write_c5-xlarge_time,11.036762940282836
-io_write_h1-2xlarge_time,8.428355919157651
-io_write_r5-large_time,10.37342874849003
-io_write_average_time,51.3012455451912
-iops_a1-large_sequentialCreateBySec,174.51017162331829
-iops_a1-large_ sequentialReadBySec,839.2030147705619
-iops_a1-large_sequentialDeleteBySec,1798.2127794007026
-iops_a1-large_ randomCreateBySec,13032.448503638907
-iops_a1-large_randomReadBySec,469.74386637826365
-iops_a1-large_randomDeleteBySec,1227.6323553898374
-iops_c5-2xlarge_sequentialCreateBySec,1385.6488371878352
-iops_c5-2xlarge_ sequentialReadBySec,3347.3233037757195
-iops_c5-2xlarge_sequentialDeleteBySec,1652.2641435315359
-iops_c5-2xlarge_ randomCreateBySec,21140.694915257634
-iops_c5-2xlarge_randomReadBySec,9517.740078400964
-iops_c5-2xlarge_randomDeleteBySec,1231.490763262153
-iops_c5-xlarge_sequentialCreateBySec,766.6190057649237
-iops_c5-xlarge_ sequentialReadBySec,2428.5921847852514
-iops_c5-xlarge_sequentialDeleteBySec,1546.245614383433
-iops_c5-xlarge_ randomCreateBySec,17834.22066702103
-iops_c5-xlarge_randomReadBySec,38056.48209306793
-iops_c5-xlarge_randomDeleteBySec,1237.154477015704
-iops_h1-2xlarge_sequentialCreateBySec,903.1193165911136
-iops_h1-2xlarge_ sequentialReadBySec,2797.5871389467034
-iops_h1-2xlarge_sequentialDeleteBySec,1579.3358414219567
-iops_h1-2xlarge_ randomCreateBySec,19547.988541023857
-iops_h1-2xlarge_randomReadBySec,9841.122989781197
-iops_h1-2xlarge_randomDeleteBySec,1259.265182556875
-iops_r5-large_sequentialCreateBySec,1643.8911764469083
-iops_r5-large_ sequentialReadBySec,2322.393528237624
-iops_r5-large_sequentialDeleteBySec,1530.425006329941
-iops_r5-large_ randomCreateBySec,20271.787230039685
-iops_r5-large_randomReadBySec,6008.698652786641
-iops_r5-large_randomDeleteBySec,1230.1424714235338
-iops_average_sequentialCreateBySec,7931.511619609467
-iops_average_ sequentialReadBySec,204016.20145951156
-iops_average_sequentialDeleteBySec,313.91481009981027
-iops_average_ randomCreateBySec,8483.130402864264
-iops_average_randomReadBySec,197159.7503117916
-iops_average_randomDeleteBySec,18.381294840135766
-memory_a1-large_brk,43709.34251873585
-memory_a1-large_stack,90.90911576954205
-memory_a1-large_bigheap,2344.923076205273
-memory_c5-2xlarge_brk,277832.5886066568
-memory_c5-2xlarge_stack,220.5573219596212
-memory_c5-2xlarge_bigheap,20001.590288795287
-memory_c5-xlarge_brk,166369.8990017692
-memory_c5-xlarge_stack,130.91964913640732
-memory_c5-xlarge_bigheap,10318.000076353459
-memory_h1-2xlarge_brk,44994.60628321765
-memory_h1-2xlarge_stack,53.080178692238775
-memory_h1-2xlarge_bigheap,12320.20325796535
-memory_r5-large_brk,6533.79122936064
-memory_r5-large_stack,6.378270141660671
-memory_r5-large_bigheap,1421.6558906535709
-memory_average_brk,269413.47128541075
-memory_average_stack,90.67738718776585
-memory_average_bigheap,15842.033899762428
-network_a1-large_Ping,1.3432829932668704
-network_a1-large_Download,68218934.4478888
-network_a1-large_Upload,43517834.43082346
-network_c5-2xlarge_Ping,2.4894847458861835
-network_c5-2xlarge_Download,778998314.1122593
-network_c5-2xlarge_Upload,363541721.85207
-network_c5-xlarge_Ping,2.924727713822261
-network_c5-xlarge_Download,498375232.20599604
-network_c5-xlarge_Upload,19259965.11630576
-network_h1-2xlarge_Ping,5.242855548267566
-network_h1-2xlarge_Download,393106684.2752839
-network_h1-2xlarge_Upload,96408385.06727253
-network_r5-large_Ping,0.17034670528073062
-network_r5-large_Download,599862410.501116
-network_r5-large_Upload,440562063.3791975
-network_average_Ping,6.675924377941982
-network_average_Download,271143342.5755682
-network_average_Upload,203937554.12119925
+cpu_a1-large_time,340.2,0.4472135954999579
+cpu_c5-2xlarge_time,599.2,0.4472135954999579
+cpu_c5-xlarge_time,600.2,2.16794833886788
+cpu_h1-2xlarge_time,793.8,1.0954451150103321
+cpu_r5-large_time,664.4,15.43696861433617
+cpu_average_time,599.56,165.2282905558246
+io_latency_a1-large_latencyAvg,264.42,21.45942683297948
+io_latency_c5-2xlarge_latencyAvg,257.7,17.41163404164008
+io_latency_c5-xlarge_latencyAvg,246.86,9.070446516021146
+io_latency_h1-2xlarge_latencyAvg,290.54,9.391645223282227
+io_latency_r5-large_latencyAvg,298.9,22.403347964087867
+io_latency_average_latencyAvg,271.68399999999997,22.140507672589617
+io_read_average_cachedReadingSpeed,7153.228,2811.3480185793437
+io_read_average_regularReadingSpeed,171.208,1.522093952422128
+io_write_a1-large_time,547.7746,19.54612152832375
+io_write_c5-2xlarge_time,458.5698,7.547717184685738
+io_write_c5-xlarge_time,561.1308,11.036762940282836
+io_write_h1-2xlarge_time,504.447,8.428355919157651
+io_write_r5-large_time,446.699,10.37342874849003
+io_write_average_time,503.72424,51.3012455451912
+iops_a1-large_sequentialCreateBySec,25691.4,174.51017162331829
+iops_a1-large_ sequentialReadBySec,209076.8,839.2030147705619
+iops_a1-large_sequentialDeleteBySec,2279.8,1798.2127794007026
+iops_a1-large_ randomCreateBySec,16157.0,13032.448503638907
+iops_a1-large_randomReadBySec,380197.6,469.74386637826365
+iops_a1-large_randomDeleteBySec,1419.8,1227.6323553898374
+iops_c5-2xlarge_sequentialCreateBySec,40944.8,1385.6488371878352
+iops_c5-2xlarge_ sequentialReadBySec,687946.6,3347.3233037757195
+iops_c5-2xlarge_sequentialDeleteBySec,2415.4,1652.2641435315359
+iops_c5-2xlarge_ randomCreateBySec,25083.0,21140.694915257634
+iops_c5-2xlarge_randomReadBySec,830465.8,9517.740078400964
+iops_c5-2xlarge_randomDeleteBySec,1425.0,1231.490763262153
+iops_c5-xlarge_sequentialCreateBySec,43719.2,766.6190057649237
+iops_c5-xlarge_ sequentialReadBySec,677044.0,2428.5921847852514
+iops_c5-xlarge_sequentialDeleteBySec,2898.0,1546.245614383433
+iops_c5-xlarge_ randomCreateBySec,33919.4,17834.22066702103
+iops_c5-xlarge_randomReadBySec,790847.6,38056.48209306793
+iops_c5-xlarge_randomDeleteBySec,1432.2,1237.154477015704
+iops_h1-2xlarge_sequentialCreateBySec,45957.0,903.1193165911136
+iops_h1-2xlarge_ sequentialReadBySec,481515.6,2797.5871389467034
+iops_h1-2xlarge_sequentialDeleteBySec,2961.2,1579.3358414219567
+iops_h1-2xlarge_ randomCreateBySec,37574.0,19547.988541023857
+iops_h1-2xlarge_randomReadBySec,551045.2,9841.122989781197
+iops_h1-2xlarge_randomDeleteBySec,1465.4,1259.265182556875
+iops_r5-large_sequentialCreateBySec,38746.2,1643.8911764469083
+iops_r5-large_ sequentialReadBySec,653611.2,2322.393528237624
+iops_r5-large_sequentialDeleteBySec,2873.8,1530.425006329941
+iops_r5-large_ randomCreateBySec,24227.0,20271.787230039685
+iops_r5-large_randomReadBySec,800386.0,6008.698652786641
+iops_r5-large_randomDeleteBySec,1425.0,1230.1424714235338
+iops_average_sequentialCreateBySec,39011.72,7931.511619609467
+iops_average_ sequentialReadBySec,541838.84,204016.20145951156
+iops_average_sequentialDeleteBySec,2685.64,313.91481009981027
+iops_average_ randomCreateBySec,27392.08,8483.130402864264
+iops_average_randomReadBySec,670588.44,197159.7503117916
+iops_average_randomDeleteBySec,1433.48,18.381294840135766
+memory_a1-large_brk,187004.978,43709.34251873585
+memory_a1-large_stack,350.764,90.90911576954205
+memory_a1-large_bigheap,11805.268,2344.923076205273
+memory_c5-2xlarge_brk,627648.312,277832.5886066568
+memory_c5-2xlarge_stack,281.892,220.5573219596212
+memory_c5-2xlarge_bigheap,41439.816,20001.590288795287
+memory_c5-xlarge_brk,390722.406,166369.8990017692
+memory_c5-xlarge_stack,257.536,130.91964913640732
+memory_c5-xlarge_bigheap,20605.615999999998,10318.000076353459
+memory_h1-2xlarge_brk,828941.352,44994.60628321765
+memory_h1-2xlarge_stack,333.478,53.080178692238775
+memory_h1-2xlarge_bigheap,46337.306,12320.20325796535
+memory_r5-large_brk,243473.368,6533.79122936064
+memory_r5-large_stack,121.524,6.378270141660671
+memory_r5-large_bigheap,14765.914,1421.6558906535709
+memory_average_brk,455558.0832,269413.47128541075
+memory_average_stack,269.0388,90.67738718776585
+memory_average_bigheap,26990.784,15842.033899762428
+network_a1-large_Ping,18.604200000000002,1.3432829932668704
+network_a1-large_Download,1015955792.939345,68218934.4478888
+network_a1-large_Upload,768425818.2086298,43517834.43082346
+network_c5-2xlarge_Ping,19.191599999999998,2.4894847458861835
+network_c5-2xlarge_Download,1159810224.5074646,778998314.1122593
+network_c5-2xlarge_Upload,1224016723.719747,363541721.85207
+network_c5-xlarge_Ping,19.9508,2.924727713822261
+network_c5-xlarge_Download,1638712518.263435,498375232.20599604
+network_c5-xlarge_Upload,1286664363.9564319,19259965.11630576
+network_h1-2xlarge_Ping,33.699400000000004,5.242855548267566
+network_h1-2xlarge_Download,1258444802.5610256,393106684.2752839
+network_h1-2xlarge_Upload,1020131824.106612,96408385.06727253
+network_r5-large_Ping,17.769000000000002,0.17034670528073062
+network_r5-large_Download,1587065978.4927847,599862410.501116
+network_r5-large_Upload,1129080026.869697,440562063.3791975
+network_average_Ping,21.843,6.675924377941982
+network_average_Download,1331997863.352811,271143342.5755682
+network_average_Upload,1085663751.3722236,203937554.12119925
