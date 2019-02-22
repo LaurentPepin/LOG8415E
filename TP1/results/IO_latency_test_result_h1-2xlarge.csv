@@ -1,6 +1,6 @@
-instance,latencyAvg
-h1-2xlarge, 278.3 us
-h1-2xlarge, 284.5 us
-h1-2xlarge, 296.6 us
-h1-2xlarge, 301.9 us
-h1-2xlarge, 291.4 us
+iteration,instance,latencyAvg
+1,h1-2xlarge, 278.3
+2,h1-2xlarge, 284.5
+3,h1-2xlarge, 296.6
+4,h1-2xlarge, 301.9
+5,h1-2xlarge, 291.4

@@ -1,6 +1,6 @@
-instance,latencyAvg
-a1-large, 254.0 us
-a1-large, 250.3 us
-a1-large, 242.8 us
-a1-large, 286.7 us
-a1-large, 288.3 us
+iteration,instance,latencyAvg
+1,a1-large, 254.0
+2,a1-large, 250.3
+3,a1-large, 242.8
+4,a1-large, 286.7
+5,a1-large, 288.3

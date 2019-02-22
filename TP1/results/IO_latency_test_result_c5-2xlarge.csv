@@ -1,6 +1,6 @@
-instance,latencyAvg
-c5-2xlarge, 261.9 us
-c5-2xlarge, 244.5 us
-c5-2xlarge, 280.2 us
-c5-2xlarge, 236.4 us
-c5-2xlarge, 265.5 us
+iteration,instance,latencyAvg
+1,c5-2xlarge, 261.9
+2,c5-2xlarge, 244.5
+3,c5-2xlarge, 280.2
+4,c5-2xlarge, 236.4
+5,c5-2xlarge, 265.5
