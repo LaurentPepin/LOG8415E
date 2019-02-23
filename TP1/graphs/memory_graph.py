@@ -39,7 +39,7 @@ for measure in measures:
     plt.title("Variation of " + measure.lstrip() +
               " over 5 iterations", y=1.08)
     plt.xticks([1, 2, 3, 4, 5])
-    plt.ylabel(measure + ' (s)')
+    plt.ylabel(measure + ' (ops/s)')
     plt.xlabel("Iteration")
     plt.subplots_adjust(right=0.75)
     plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
